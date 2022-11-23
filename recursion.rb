@@ -104,7 +104,7 @@ def bsearch(array, target)
         bsearch(array[0...midpoint], target)
     elsif array[midpoint] < target 
         bsearch1 = bsearch(array[midpoint..-1], target)
-        bsearch1 == nil? nil : bsearch1 + midpoint
+        bsearch1 == nil ? nil : bsearch1 + midpoint
     end
 
 end
@@ -117,3 +117,5 @@ p bsearch([1, 3, 4, 5, 9], 5) # => 3
 p bsearch([1, 2, 3, 4, 5, 6], 6) # => 5
 p bsearch([1, 2, 3, 4, 5, 6], 0) # => nil
 p bsearch([1, 2, 3, 4, 5, 7], 6) # => nil
+
+
