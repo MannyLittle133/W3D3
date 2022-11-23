@@ -146,7 +146,8 @@ end
 
 def subsets(arr)
     return [arr] if arr.length == 0
-    subsets(arr[0..-2])
+    prev_subsets = subsets(arr[0..-2])
+    prev_subsets + prev_subsets.map { |subArr| subArr + [arr[-1]] }
 end
 
 
