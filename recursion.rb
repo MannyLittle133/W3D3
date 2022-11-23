@@ -120,7 +120,38 @@ end
 
 
 def merge_sort(arr)
+    return arr if arr.length <= 1
 
-    
+    mid = arr.length / 2
+    left = merge_sort(arr[0...mid])
+    right = merge_sort(arr[mid..-1])
 
+    merge(left, right)
 end
+
+def merge(left, right)
+    merged = []
+
+    while left.length > 0 && right.length > 0
+        if left[0] < right[0]
+            merged << left.shift
+        else
+            merged << right.shift
+        end
+    end
+    merged + left + right
+end
+
+# p merge_sort([2, 3, 4, 7, 8, 1, 5, 6])
+
+def subsets(arr)
+    return [arr] if arr.length == 0
+    subsets(arr[0..-2])
+end
+
+
+p subsets([]) # => [[]]
+p subsets([1]) # => [[], [1]]
+p subsets([1, 2]) # => [[], [1], [2], [1, 2]]
+p subsets([1, 2, 3])
+# => [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
