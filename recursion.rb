@@ -37,27 +37,40 @@ def exp(b, n)
 
 end
 
-# p exp(2, 4)
+p exp(2, 4)
 
 
-def deep_dup(array) # [1, [2], [3, [4]]]
-    new_arr = []
+# def deep_dup(array) # [1, [2], [3, [4]]]
+#     new_arr = []
 
-    array.each do |ele|
+#     array.each do |ele|
 
-            new_arr << ele
+#             new_arr << ele
 
-    end
+#     end
 
-    new_arr
+#     new_arr
 
+# end
+
+# robot_parts = [
+#   ["nuts", "bolts", "washers"],
+#   ["capacitors", "resistors", "inductors"]
+# ]
+
+# p b = deep_dup(robot_parts)
+# p b[1] << "LEDS"
+# p robot_parts
+
+def fibonacci(n)
+    return [] if n == 0
+    return [0] if n == 1
+    return [0, 1] if n == 2
+
+    fibonacci(n-1) << fibonacci(n-1)[-2] + fibonacci(n-1)[-1]
 end
 
-robot_parts = [
-  ["nuts", "bolts", "washers"],
-  ["capacitors", "resistors", "inductors"]
-]
+p fibonacci(6)
 
-p b = deep_dup(robot_parts)
-p b[1] << "LEDS"
-p robot_parts
+
+
